@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <form name="f" th:action="@{/perform-login}" method="post">
+        <fieldset>
+            <legend>Login</legend>
+            <div th:if="${param.error}" class="alert alert-error">
+                Incorrect name and password.
+            </div>
+            <div th:if="${param.logout}" class="alert alert-success">
+                You have been logged out.
+            </div>
+            <label for="user">Name</label>
+            <input type="text" id="user" name="username"/>
+            <label for="pass">Password</label>
+            <input type="password" id="pass" name="password"/>
+            <div class="form-actions">
+                <button type="submit" class="btn">Login</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>
